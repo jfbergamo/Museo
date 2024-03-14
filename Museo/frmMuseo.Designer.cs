@@ -30,26 +30,37 @@
         {
             this.components = new System.ComponentModel.Container();
             this.pnlInfoFile = new System.Windows.Forms.Panel();
-            this.btnInfoFile = new System.Windows.Forms.Button();
-            this.lblInfo = new System.Windows.Forms.Label();
             this.fldInfoFile = new System.Windows.Forms.Panel();
+            this.lblInfo = new System.Windows.Forms.Label();
+            this.btnInfoFile = new System.Windows.Forms.Button();
             this.menu = new System.Windows.Forms.MenuStrip();
             this.azioniToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.esciToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.pnlCentro = new System.Windows.Forms.Panel();
-            this.pnlGestione = new System.Windows.Forms.Panel();
-            this.btnAggiungi = new System.Windows.Forms.Button();
-            this.grpModifica = new System.Windows.Forms.GroupBox();
-            this.grpElimina = new System.Windows.Forms.GroupBox();
             this.btnModifica = new System.Windows.Forms.Button();
             this.txtModifica = new System.Windows.Forms.TextBox();
+            this.pnlGestione = new System.Windows.Forms.Panel();
+            this.grpModifica = new System.Windows.Forms.GroupBox();
+            this.btnAggiungi = new System.Windows.Forms.Button();
+            this.grpElimina = new System.Windows.Forms.GroupBox();
+            this.txtElimina = new System.Windows.Forms.TextBox();
             this.tltScegliID = new System.Windows.Forms.ToolTip(this.components);
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.btnElimina = new System.Windows.Forms.Button();
+            this.pnlCentro2 = new System.Windows.Forms.Panel();
+            this.pnlFiltri = new System.Windows.Forms.Panel();
+            this.btnVisualizza = new System.Windows.Forms.Button();
+            this.btnCerca = new System.Windows.Forms.Button();
+            this.grdData = new System.Windows.Forms.DataGridView();
             this.pnlInfoFile.SuspendLayout();
             this.fldInfoFile.SuspendLayout();
             this.menu.SuspendLayout();
             this.pnlCentro.SuspendLayout();
             this.pnlGestione.SuspendLayout();
+            this.grpModifica.SuspendLayout();
+            this.grpElimina.SuspendLayout();
+            this.pnlCentro2.SuspendLayout();
+            this.pnlFiltri.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.grdData)).BeginInit();
             this.SuspendLayout();
             // 
             // pnlInfoFile
@@ -62,15 +73,16 @@
             this.pnlInfoFile.Size = new System.Drawing.Size(200, 426);
             this.pnlInfoFile.TabIndex = 0;
             // 
-            // btnInfoFile
+            // fldInfoFile
             // 
-            this.btnInfoFile.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnInfoFile.Location = new System.Drawing.Point(0, 0);
-            this.btnInfoFile.Name = "btnInfoFile";
-            this.btnInfoFile.Size = new System.Drawing.Size(200, 119);
-            this.btnInfoFile.TabIndex = 0;
-            this.btnInfoFile.Text = "Mostra info File";
-            this.btnInfoFile.UseVisualStyleBackColor = true;
+            this.fldInfoFile.AutoScroll = true;
+            this.fldInfoFile.BackColor = System.Drawing.SystemColors.ControlText;
+            this.fldInfoFile.Controls.Add(this.lblInfo);
+            this.fldInfoFile.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.fldInfoFile.Location = new System.Drawing.Point(0, 74);
+            this.fldInfoFile.Name = "fldInfoFile";
+            this.fldInfoFile.Size = new System.Drawing.Size(200, 352);
+            this.fldInfoFile.TabIndex = 1;
             // 
             // lblInfo
             // 
@@ -83,16 +95,15 @@
             this.lblInfo.TabIndex = 1;
             this.lblInfo.Text = "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa";
             // 
-            // fldInfoFile
+            // btnInfoFile
             // 
-            this.fldInfoFile.AutoScroll = true;
-            this.fldInfoFile.BackColor = System.Drawing.SystemColors.ControlText;
-            this.fldInfoFile.Controls.Add(this.lblInfo);
-            this.fldInfoFile.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.fldInfoFile.Location = new System.Drawing.Point(0, 119);
-            this.fldInfoFile.Name = "fldInfoFile";
-            this.fldInfoFile.Size = new System.Drawing.Size(200, 307);
-            this.fldInfoFile.TabIndex = 1;
+            this.btnInfoFile.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnInfoFile.Location = new System.Drawing.Point(0, 0);
+            this.btnInfoFile.Name = "btnInfoFile";
+            this.btnInfoFile.Size = new System.Drawing.Size(200, 74);
+            this.btnInfoFile.TabIndex = 0;
+            this.btnInfoFile.Text = "Mostra info File";
+            this.btnInfoFile.UseVisualStyleBackColor = true;
             // 
             // menu
             // 
@@ -115,97 +126,166 @@
             // esciToolStripMenuItem
             // 
             this.esciToolStripMenuItem.Name = "esciToolStripMenuItem";
-            this.esciToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.esciToolStripMenuItem.Size = new System.Drawing.Size(94, 22);
             this.esciToolStripMenuItem.Text = "Esci";
             this.esciToolStripMenuItem.Click += new System.EventHandler(this.esciToolStripMenuItem_Click);
             // 
             // pnlCentro
             // 
-            this.pnlCentro.Controls.Add(this.btnModifica);
-            this.pnlCentro.Controls.Add(this.txtModifica);
-            this.pnlCentro.Controls.Add(this.textBox1);
+            this.pnlCentro.Controls.Add(this.pnlCentro2);
             this.pnlCentro.Controls.Add(this.pnlGestione);
-            this.pnlCentro.Controls.Add(this.grpModifica);
             this.pnlCentro.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnlCentro.Location = new System.Drawing.Point(0, 24);
             this.pnlCentro.Name = "pnlCentro";
             this.pnlCentro.Size = new System.Drawing.Size(600, 426);
             this.pnlCentro.TabIndex = 2;
             // 
-            // pnlGestione
-            // 
-            this.pnlGestione.Controls.Add(this.grpElimina);
-            this.pnlGestione.Controls.Add(this.btnAggiungi);
-            this.pnlGestione.Dock = System.Windows.Forms.DockStyle.Top;
-            this.pnlGestione.Location = new System.Drawing.Point(0, 0);
-            this.pnlGestione.Name = "pnlGestione";
-            this.pnlGestione.Size = new System.Drawing.Size(600, 100);
-            this.pnlGestione.TabIndex = 0;
-            // 
-            // btnAggiungi
-            // 
-            this.btnAggiungi.Dock = System.Windows.Forms.DockStyle.Left;
-            this.btnAggiungi.Location = new System.Drawing.Point(0, 0);
-            this.btnAggiungi.Name = "btnAggiungi";
-            this.btnAggiungi.Size = new System.Drawing.Size(172, 100);
-            this.btnAggiungi.TabIndex = 0;
-            this.btnAggiungi.Text = "Aggiungi";
-            this.btnAggiungi.UseVisualStyleBackColor = true;
-            // 
-            // grpModifica
-            // 
-            this.grpModifica.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.grpModifica.Location = new System.Drawing.Point(226, 230);
-            this.grpModifica.Name = "grpModifica";
-            this.grpModifica.Size = new System.Drawing.Size(200, 100);
-            this.grpModifica.TabIndex = 1;
-            this.grpModifica.TabStop = false;
-            this.grpModifica.Text = "Modifica opera";
-            // 
-            // grpElimina
-            // 
-            this.grpElimina.Dock = System.Windows.Forms.DockStyle.Right;
-            this.grpElimina.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.grpElimina.Location = new System.Drawing.Point(441, 0);
-            this.grpElimina.Name = "grpElimina";
-            this.grpElimina.Size = new System.Drawing.Size(159, 100);
-            this.grpElimina.TabIndex = 2;
-            this.grpElimina.TabStop = false;
-            this.grpElimina.Text = "Rimuovi opera";
-            // 
             // btnModifica
             // 
-            this.btnModifica.Location = new System.Drawing.Point(481, 202);
+            this.btnModifica.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnModifica.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnModifica.Location = new System.Drawing.Point(3, 19);
             this.btnModifica.Name = "btnModifica";
-            this.btnModifica.Size = new System.Drawing.Size(75, 23);
+            this.btnModifica.Size = new System.Drawing.Size(223, 55);
             this.btnModifica.TabIndex = 0;
             this.btnModifica.Text = "Modifica";
             this.btnModifica.UseVisualStyleBackColor = true;
             // 
             // txtModifica
             // 
-            this.txtModifica.Location = new System.Drawing.Point(82, 348);
+            this.txtModifica.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.txtModifica.Location = new System.Drawing.Point(3, 74);
             this.txtModifica.Name = "txtModifica";
-            this.txtModifica.Size = new System.Drawing.Size(236, 20);
+            this.txtModifica.Size = new System.Drawing.Size(223, 23);
             this.txtModifica.TabIndex = 1;
             this.tltScegliID.SetToolTip(this.txtModifica, "Inserisci l\'ID dell\'opera");
+            // 
+            // pnlGestione
+            // 
+            this.pnlGestione.Controls.Add(this.grpModifica);
+            this.pnlGestione.Controls.Add(this.btnAggiungi);
+            this.pnlGestione.Controls.Add(this.grpElimina);
+            this.pnlGestione.Dock = System.Windows.Forms.DockStyle.Top;
+            this.pnlGestione.Location = new System.Drawing.Point(0, 0);
+            this.pnlGestione.Name = "pnlGestione";
+            this.pnlGestione.Size = new System.Drawing.Size(600, 100);
+            this.pnlGestione.TabIndex = 0;
+            // 
+            // grpModifica
+            // 
+            this.grpModifica.Controls.Add(this.btnModifica);
+            this.grpModifica.Controls.Add(this.txtModifica);
+            this.grpModifica.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.grpModifica.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.grpModifica.Location = new System.Drawing.Point(165, 0);
+            this.grpModifica.Name = "grpModifica";
+            this.grpModifica.Size = new System.Drawing.Size(229, 100);
+            this.grpModifica.TabIndex = 1;
+            this.grpModifica.TabStop = false;
+            this.grpModifica.Text = "Modifica opera";
+            // 
+            // btnAggiungi
+            // 
+            this.btnAggiungi.Dock = System.Windows.Forms.DockStyle.Left;
+            this.btnAggiungi.Location = new System.Drawing.Point(0, 0);
+            this.btnAggiungi.Name = "btnAggiungi";
+            this.btnAggiungi.Size = new System.Drawing.Size(165, 100);
+            this.btnAggiungi.TabIndex = 0;
+            this.btnAggiungi.Text = "Aggiungi";
+            this.btnAggiungi.UseVisualStyleBackColor = true;
+            // 
+            // grpElimina
+            // 
+            this.grpElimina.Controls.Add(this.btnElimina);
+            this.grpElimina.Controls.Add(this.txtElimina);
+            this.grpElimina.Dock = System.Windows.Forms.DockStyle.Right;
+            this.grpElimina.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.grpElimina.Location = new System.Drawing.Point(394, 0);
+            this.grpElimina.Name = "grpElimina";
+            this.grpElimina.Size = new System.Drawing.Size(206, 100);
+            this.grpElimina.TabIndex = 2;
+            this.grpElimina.TabStop = false;
+            this.grpElimina.Text = "Rimuovi opera";
+            // 
+            // txtElimina
+            // 
+            this.txtElimina.Dock = System.Windows.Forms.DockStyle.Top;
+            this.txtElimina.Location = new System.Drawing.Point(3, 19);
+            this.txtElimina.Name = "txtElimina";
+            this.txtElimina.Size = new System.Drawing.Size(200, 23);
+            this.txtElimina.TabIndex = 2;
+            this.tltScegliID.SetToolTip(this.txtElimina, "Inserisci l\'ID dell\'opera");
             // 
             // tltScegliID
             // 
             this.tltScegliID.ToolTipTitle = "Scegli l\'ID dell\'opera";
             // 
-            // textBox1
+            // btnElimina
             // 
-            this.textBox1.Location = new System.Drawing.Point(217, 155);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(194, 20);
-            this.textBox1.TabIndex = 2;
-            this.tltScegliID.SetToolTip(this.textBox1, "Inserisci l\'ID dell\'opera");
+            this.btnElimina.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnElimina.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnElimina.Location = new System.Drawing.Point(3, 42);
+            this.btnElimina.Name = "btnElimina";
+            this.btnElimina.Size = new System.Drawing.Size(200, 55);
+            this.btnElimina.TabIndex = 2;
+            this.btnElimina.Text = "Elimina";
+            this.btnElimina.UseVisualStyleBackColor = true;
+            // 
+            // pnlCentro2
+            // 
+            this.pnlCentro2.Controls.Add(this.grdData);
+            this.pnlCentro2.Controls.Add(this.pnlFiltri);
+            this.pnlCentro2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pnlCentro2.Location = new System.Drawing.Point(0, 100);
+            this.pnlCentro2.Name = "pnlCentro2";
+            this.pnlCentro2.Size = new System.Drawing.Size(600, 326);
+            this.pnlCentro2.TabIndex = 1;
+            // 
+            // pnlFiltri
+            // 
+            this.pnlFiltri.Controls.Add(this.btnCerca);
+            this.pnlFiltri.Controls.Add(this.btnVisualizza);
+            this.pnlFiltri.Dock = System.Windows.Forms.DockStyle.Top;
+            this.pnlFiltri.Location = new System.Drawing.Point(0, 0);
+            this.pnlFiltri.Name = "pnlFiltri";
+            this.pnlFiltri.Size = new System.Drawing.Size(600, 100);
+            this.pnlFiltri.TabIndex = 0;
+            // 
+            // btnVisualizza
+            // 
+            this.btnVisualizza.Dock = System.Windows.Forms.DockStyle.Left;
+            this.btnVisualizza.Location = new System.Drawing.Point(0, 0);
+            this.btnVisualizza.Name = "btnVisualizza";
+            this.btnVisualizza.Size = new System.Drawing.Size(269, 100);
+            this.btnVisualizza.TabIndex = 0;
+            this.btnVisualizza.Text = "Visualizza";
+            this.btnVisualizza.UseVisualStyleBackColor = true;
+            // 
+            // btnCerca
+            // 
+            this.btnCerca.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnCerca.Location = new System.Drawing.Point(269, 0);
+            this.btnCerca.Name = "btnCerca";
+            this.btnCerca.Size = new System.Drawing.Size(331, 100);
+            this.btnCerca.TabIndex = 1;
+            this.btnCerca.Text = "Cesca per autore";
+            this.btnCerca.UseVisualStyleBackColor = true;
+            // 
+            // grdData
+            // 
+            this.grdData.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.grdData.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.grdData.Location = new System.Drawing.Point(0, 100);
+            this.grdData.Name = "grdData";
+            this.grdData.Size = new System.Drawing.Size(600, 226);
+            this.grdData.TabIndex = 1;
             // 
             // frmMuseo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackgroundImage = global::Museo.Properties.Resources.museo;
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.pnlCentro);
             this.Controls.Add(this.pnlInfoFile);
@@ -219,8 +299,14 @@
             this.menu.ResumeLayout(false);
             this.menu.PerformLayout();
             this.pnlCentro.ResumeLayout(false);
-            this.pnlCentro.PerformLayout();
             this.pnlGestione.ResumeLayout(false);
+            this.grpModifica.ResumeLayout(false);
+            this.grpModifica.PerformLayout();
+            this.grpElimina.ResumeLayout(false);
+            this.grpElimina.PerformLayout();
+            this.pnlCentro2.ResumeLayout(false);
+            this.pnlFiltri.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.grdData)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -243,7 +329,13 @@
         private System.Windows.Forms.TextBox txtModifica;
         private System.Windows.Forms.Button btnModifica;
         private System.Windows.Forms.ToolTip tltScegliID;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtElimina;
+        private System.Windows.Forms.Button btnElimina;
+        private System.Windows.Forms.Panel pnlCentro2;
+        private System.Windows.Forms.Panel pnlFiltri;
+        private System.Windows.Forms.Button btnVisualizza;
+        private System.Windows.Forms.Button btnCerca;
+        private System.Windows.Forms.DataGridView grdData;
     }
 }
 
