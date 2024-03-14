@@ -51,6 +51,11 @@
             this.btnVisualizza = new System.Windows.Forms.Button();
             this.btnCerca = new System.Windows.Forms.Button();
             this.grdData = new System.Windows.Forms.DataGridView();
+            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.A = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.pnlInfoFile.SuspendLayout();
             this.fldInfoFile.SuspendLayout();
             this.menu.SuspendLayout();
@@ -248,7 +253,7 @@
             this.pnlFiltri.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnlFiltri.Location = new System.Drawing.Point(0, 0);
             this.pnlFiltri.Name = "pnlFiltri";
-            this.pnlFiltri.Size = new System.Drawing.Size(600, 100);
+            this.pnlFiltri.Size = new System.Drawing.Size(600, 70);
             this.pnlFiltri.TabIndex = 0;
             // 
             // btnVisualizza
@@ -256,7 +261,7 @@
             this.btnVisualizza.Dock = System.Windows.Forms.DockStyle.Left;
             this.btnVisualizza.Location = new System.Drawing.Point(0, 0);
             this.btnVisualizza.Name = "btnVisualizza";
-            this.btnVisualizza.Size = new System.Drawing.Size(269, 100);
+            this.btnVisualizza.Size = new System.Drawing.Size(293, 70);
             this.btnVisualizza.TabIndex = 0;
             this.btnVisualizza.Text = "Visualizza";
             this.btnVisualizza.UseVisualStyleBackColor = true;
@@ -264,9 +269,9 @@
             // btnCerca
             // 
             this.btnCerca.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnCerca.Location = new System.Drawing.Point(269, 0);
+            this.btnCerca.Location = new System.Drawing.Point(293, 0);
             this.btnCerca.Name = "btnCerca";
-            this.btnCerca.Size = new System.Drawing.Size(331, 100);
+            this.btnCerca.Size = new System.Drawing.Size(307, 70);
             this.btnCerca.TabIndex = 1;
             this.btnCerca.Text = "Cesca per autore";
             this.btnCerca.UseVisualStyleBackColor = true;
@@ -274,11 +279,47 @@
             // grdData
             // 
             this.grdData.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.grdData.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Column1,
+            this.Column2,
+            this.Column3,
+            this.A,
+            this.Column4});
             this.grdData.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.grdData.Location = new System.Drawing.Point(0, 100);
+            this.grdData.Location = new System.Drawing.Point(0, 70);
             this.grdData.Name = "grdData";
-            this.grdData.Size = new System.Drawing.Size(600, 226);
+            this.grdData.Size = new System.Drawing.Size(600, 256);
             this.grdData.TabIndex = 1;
+            // 
+            // Column1
+            // 
+            this.Column1.HeaderText = "ID";
+            this.Column1.Name = "Column1";
+            this.Column1.ReadOnly = true;
+            // 
+            // Column2
+            // 
+            this.Column2.HeaderText = "Autore";
+            this.Column2.Name = "Column2";
+            this.Column2.ReadOnly = true;
+            // 
+            // Column3
+            // 
+            this.Column3.HeaderText = "Titolo";
+            this.Column3.Name = "Column3";
+            this.Column3.ReadOnly = true;
+            // 
+            // A
+            // 
+            this.A.HeaderText = "Anno";
+            this.A.Name = "A";
+            this.A.ReadOnly = true;
+            // 
+            // Column4
+            // 
+            this.Column4.HeaderText = "Tipo";
+            this.Column4.Name = "Column4";
+            this.Column4.ReadOnly = true;
             // 
             // frmMuseo
             // 
@@ -336,6 +377,11 @@
         private System.Windows.Forms.Button btnVisualizza;
         private System.Windows.Forms.Button btnCerca;
         private System.Windows.Forms.DataGridView grdData;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn A;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
     }
 }
 

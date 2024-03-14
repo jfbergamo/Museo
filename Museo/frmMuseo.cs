@@ -10,8 +10,11 @@ using System.Windows.Forms;
 
 namespace Museo
 {
-    public partial class frmMuseo : Form
+    internal partial class frmMuseo : Form
     {
+
+        #region EVENTI
+
         public frmMuseo()
         {
             InitializeComponent();
@@ -19,6 +22,9 @@ namespace Museo
 
         private void esciToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            Visualizza(new Opera());
+
+            return;
             DialogResult res =
                 MessageBox.Show(
                     "Sei sicuro di voler uscire?",
@@ -32,5 +38,17 @@ namespace Museo
                 Application.Exit();
             }
         }
+
+        #endregion
+
+        #region METODI
+
+        public void Visualizza(Opera opera)
+        {
+            grdData.Rows.Add(opera.ToString().Split('|'));
+        }
+
+        #endregion
+
     }
 }
