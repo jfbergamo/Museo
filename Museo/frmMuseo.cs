@@ -13,6 +13,10 @@ namespace Museo
     internal partial class frmMuseo : Form
     {
 
+        // TODO:
+        // Menù secondari per inserimento e modifica
+        // Integrazione con file binario
+
         #region EVENTI
 
         public frmMuseo()
@@ -22,9 +26,6 @@ namespace Museo
 
         private void esciToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Visualizza(new Opera());
-
-            return;
             DialogResult res =
                 MessageBox.Show(
                     "Sei sicuro di voler uscire?",
