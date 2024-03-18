@@ -353,7 +353,6 @@
             this.MainMenuStrip = this.menu;
             this.Name = "frmMuseo";
             this.Text = "Museo delle Fontane in Piazza";
-            this.Load += new System.EventHandler(this.frmMuseo_Load);
             this.pnlInfoFile.ResumeLayout(false);
             this.fldInfoFile.ResumeLayout(false);
             this.fldInfoFile.PerformLayout();

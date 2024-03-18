@@ -119,6 +119,11 @@ namespace Museo
             return strInfo;
         }
 
+        public static void AggiornaIndice()
+        {
+            TrovaID(-2);
+        }
+
         private static void TrovaID(int ID)
         {
             bool qui = false;

@@ -24,11 +24,6 @@ namespace Museo
             InitializeComponent();
         }
 
-        private void frmMuseo_Load(object sender, EventArgs e)
-        {
-            UpdateIndexes();
-        }
-
         private void btnAggiungi_Click(object sender, EventArgs e)
         {
             AggiungiOpera();
@@ -126,7 +121,8 @@ namespace Museo
         {
             cmbElimina.Items.Clear();
             cmbModifica.Items.Clear();
-            for (int i = 0; i <= Opere.ID;  i++)
+            Opere.AggiornaIndice();
+            for (int i = 0; i < Opere.ID; i++)
             {
                 cmbElimina.Items.Add(i.ToString());
                 cmbModifica.Items.Add(i.ToString());
