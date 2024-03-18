@@ -14,7 +14,6 @@ namespace Museo
     {
 
         // TODO:
-        // Menù secondari per inserimento e modifica
         // Integrazione con file binario
 
         #region EVENTI
@@ -47,7 +46,7 @@ namespace Museo
 
         private void btnVisualizza_Click(object sender, EventArgs e)
         {
-            Visualizza(new Opera());
+            Visualizza();
         }
 
         private void btnCerca_Click(object sender, EventArgs e)
@@ -56,8 +55,15 @@ namespace Museo
             DialogResult res = cerca.ShowDialog();
             if (res == DialogResult.OK)
             {
-                Opere.Cerca(cerca.Autore);
-                Visualizza(new Opera());
+                string opera = Opere.Cerca(cerca.Autore);
+                if (string.IsNullOrEmpty(opera))
+                {
+                    MessageBox.Show("Questo autore non esiste!", "Oh no...", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                else
+                {
+                    Visualizza(false, opera);
+                }
             }
         }
         
@@ -90,18 +96,29 @@ namespace Museo
         {
             frmOpera aggiungi = new frmOpera(true, 0);
             aggiungi.ShowDialog();
-            Visualizza(new Opera());
+            Visualizza();
         }
 
         public void ModificaOpera(int id)
         {
             frmOpera modifica = new frmOpera(false, id);
             modifica.ShowDialog();
+            Visualizza();
         }
 
-        public void Visualizza(Opera opera)
+        public void Visualizza(bool display = true, string other = "")
         {
-            grdData.Rows.Add(opera.ToString().Split('|'));
+            grdData.Rows.Clear();
+            if (display)
+            {
+                foreach (string opera in Opere.GetOpere())
+                {
+                    grdData.Rows.Add(opera.Split('|'));
+                }
+            } else
+            {
+                grdData.Rows.Add(other.Split('|'));
+            }
             UpdateIndexes();
         }
 

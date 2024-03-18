@@ -11,7 +11,7 @@ namespace Museo
 {
     internal static class Opere
     {
-        private static int id = -1;
+        private static int index = -1;
         private static string file_path = Environment.GetFolderPath(Environment.SpecialFolder.Desktop) + "\\museo.dat";
 
         private static FileStream fs;
@@ -37,13 +37,15 @@ namespace Museo
             while (br.PeekChar() != -1)
             {
                 Opera o = new Opera();
-                o.ID = br.ReadInt32();
+                int id = br.ReadInt32();
+                o.ID = id;
                 o.Autore = br.ReadString().TrimEnd();
                 o.Titolo = br.ReadString().TrimEnd();
                 o.Anno = br.ReadInt32();
                 o.Tipologia = (TipologiaOpera)br.ReadInt32();
 
-                opere.Add(o.ToString());
+                if (id != -1)
+                    opere.Add(o.ToString());
             }
 
             return opere;
@@ -51,29 +53,10 @@ namespace Museo
 
         public static void Aggiungi(string autore, string titolo, int anno, TipologiaOpera tipologia)
         {
-            Opera o = new Opera(++id, autore, titolo, anno, tipologia);
-            bool qui = false;
-            long pos;
+            Opera o = new Opera(0, autore, titolo, anno, tipologia);
 
-            fs.Seek(0, SeekOrigin.Begin);
-
-            while (br.PeekChar() != -1 && !qui)
-            {
-                pos = fs.Position;
-                int tempInt;
-                string tempStr;
-                int id = br.ReadInt32();
-                tempStr = br.ReadString().TrimEnd();
-                tempStr = br.ReadString().TrimEnd();
-                tempInt = br.ReadInt32();
-                tempInt = br.ReadInt32();
-
-                if (id == -1)
-                {
-                    fs.Seek(pos, SeekOrigin.Begin);
-                    qui = true;
-                }
-            }
+            TrovaID(-1);
+            o.ID = index++;
 
             bw.Write(o.ID);
             bw.Write(o.Autore.PadRight(50, ' '));
@@ -84,17 +67,38 @@ namespace Museo
 
         public static void Modifica(int id, string autore, string titolo, int anno, TipologiaOpera tipologia)
         {
-            throw new NotImplementedException();
+            Opera o = new Opera(0, autore, titolo, anno, tipologia);
+
+            TrovaID(id);
+            o.ID = index++;
+
+            bw.Write(o.ID);
+            bw.Write(o.Autore.PadRight(50, ' '));
+            bw.Write(o.Titolo.PadRight(50, ' '));
+            bw.Write(o.Anno);
+            bw.Write((int)o.Tipologia);
         }
 
         public static void Elimina(int id)
         {
-            throw new NotImplementedException();
+            TrovaID(id);
+            bw.Write(-1);
         }
 
-        public static void Cerca(string autore)
+        public static string Cerca(string autore)
         {
-            throw new NotImplementedException();
+            if (!TrovaAutore(autore))
+            {
+                return null;
+            }
+            Opera o = new Opera();
+            o.ID = br.ReadInt32();
+            o.Autore = br.ReadString().TrimEnd();
+            o.Titolo = br.ReadString().TrimEnd();
+            o.Anno = br.ReadInt32();
+            o.Tipologia = (TipologiaOpera)br.ReadInt32();
+
+            return o.ToString();
         }
 
         public static string AttributiFile()
@@ -115,6 +119,67 @@ namespace Museo
             return strInfo;
         }
 
-        public static int ID { get => id; }
+        private static void TrovaID(int ID)
+        {
+            bool qui = false;
+            long pos;
+            index = 0;
+
+            fs.Seek(0, SeekOrigin.Begin);
+
+            while (br.PeekChar() != -1 && !qui)
+            {
+                pos = fs.Position;
+                int tempInt;
+                string tempStr;
+                int id = br.ReadInt32();
+                tempStr = br.ReadString().TrimEnd();
+                tempStr = br.ReadString().TrimEnd();
+                tempInt = br.ReadInt32();
+                tempInt = br.ReadInt32();
+
+                index++;
+
+                if (id == ID)
+                {
+                    fs.Seek(pos, SeekOrigin.Begin);
+                    index--;
+                    qui = true;
+                }
+            }
+        }
+
+        private static bool TrovaAutore(string Titolo)
+        {
+            bool qui = false;
+            long pos;
+            index = 0;
+
+            fs.Seek(0, SeekOrigin.Begin);
+
+            while (br.PeekChar() != -1 && !qui)
+            {
+                pos = fs.Position;
+                int tempInt;
+                string tempStr;
+                tempInt = br.ReadInt32();
+                string autore = br.ReadString().TrimEnd();
+                tempStr = br.ReadString().TrimEnd();
+                tempInt = br.ReadInt32();
+                tempInt = br.ReadInt32();
+
+                index++;
+
+                if (autore == Titolo)
+                {
+                    fs.Seek(pos, SeekOrigin.Begin);
+                    index--;
+                    qui = true;
+                }
+            }
+            return qui;
+        }
+
+        public static int ID { get => index; }
     }
 }
