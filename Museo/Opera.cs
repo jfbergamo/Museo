@@ -34,7 +34,7 @@ namespace Museo
             autore = "cescokevin"; // Valore a caso
             titolo = "colpa di cesco";
             anno = 0; // praticamente gesù
-            tipologia = TipologiaOpera.ARAZZO; // perché fa rima con...
+            tipologia = TipologiaOpera.ARAZZO; // perché sì
         }
 
         public Opera(int id, string autore, string titolo, int anno, TipologiaOpera tipologia)

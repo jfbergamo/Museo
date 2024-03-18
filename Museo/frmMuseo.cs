@@ -24,6 +24,31 @@ namespace Museo
             InitializeComponent();
         }
 
+        private void frmMuseo_Load(object sender, EventArgs e)
+        {
+            UpdateIndexes();
+        }
+
+        private void btnAggiungi_Click(object sender, EventArgs e)
+        {
+            AggiungiOpera();
+        }
+
+        private void btnModifica_Click(object sender, EventArgs e)
+        {
+            ModificaOpera(cmbModifica.SelectedIndex);
+        }
+
+        private void btnElimina_Click(object sender, EventArgs e)
+        {
+            Opere.Elimina(cmbElimina.SelectedIndex);
+        }
+
+        private void btnVisualizza_Click(object sender, EventArgs e)
+        {
+            Visualizza(new Opera());
+        }
+        
         private void esciToolStripMenuItem_Click(object sender, EventArgs e)
         {
             DialogResult res =
@@ -44,9 +69,39 @@ namespace Museo
 
         #region METODI
 
+        public void AggiungiOpera()
+        {
+            frmOpera aggiungi = new frmOpera(true, 0);
+            aggiungi.ShowDialog();
+            Visualizza(new Opera());
+        }
+
+        public void ModificaOpera(int id)
+        {
+            frmOpera modifica = new frmOpera(false, id);
+            modifica.ShowDialog();
+        }
+
         public void Visualizza(Opera opera)
         {
             grdData.Rows.Add(opera.ToString().Split('|'));
+            UpdateIndexes();
+        }
+
+        public void UpdateIndexes()
+        {
+            cmbElimina.Items.Clear();
+            cmbModifica.Items.Clear();
+            for (int i = 0; i <= Opere.ID;  i++)
+            {
+                cmbElimina.Items.Add(i.ToString());
+                cmbModifica.Items.Add(i.ToString());
+            }
+            if (Opere.ID >= 0)
+            {
+                cmbElimina.SelectedIndex = 0;
+                cmbModifica.SelectedIndex = 0;
+            }
         }
 
         #endregion

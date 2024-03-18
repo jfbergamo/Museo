@@ -37,35 +37,35 @@
             this.azioniToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.esciToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.pnlCentro = new System.Windows.Forms.Panel();
-            this.btnModifica = new System.Windows.Forms.Button();
-            this.txtModifica = new System.Windows.Forms.TextBox();
-            this.pnlGestione = new System.Windows.Forms.Panel();
-            this.grpModifica = new System.Windows.Forms.GroupBox();
-            this.btnAggiungi = new System.Windows.Forms.Button();
-            this.grpElimina = new System.Windows.Forms.GroupBox();
-            this.txtElimina = new System.Windows.Forms.TextBox();
-            this.tltScegliID = new System.Windows.Forms.ToolTip(this.components);
-            this.btnElimina = new System.Windows.Forms.Button();
             this.pnlCentro2 = new System.Windows.Forms.Panel();
-            this.pnlFiltri = new System.Windows.Forms.Panel();
-            this.btnVisualizza = new System.Windows.Forms.Button();
-            this.btnCerca = new System.Windows.Forms.Button();
             this.grdData = new System.Windows.Forms.DataGridView();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.A = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.pnlFiltri = new System.Windows.Forms.Panel();
+            this.btnCerca = new System.Windows.Forms.Button();
+            this.btnVisualizza = new System.Windows.Forms.Button();
+            this.pnlGestione = new System.Windows.Forms.Panel();
+            this.grpModifica = new System.Windows.Forms.GroupBox();
+            this.btnModifica = new System.Windows.Forms.Button();
+            this.cmbModifica = new System.Windows.Forms.ComboBox();
+            this.btnAggiungi = new System.Windows.Forms.Button();
+            this.grpElimina = new System.Windows.Forms.GroupBox();
+            this.btnElimina = new System.Windows.Forms.Button();
+            this.cmbElimina = new System.Windows.Forms.ComboBox();
+            this.tltScegliID = new System.Windows.Forms.ToolTip(this.components);
             this.pnlInfoFile.SuspendLayout();
             this.fldInfoFile.SuspendLayout();
             this.menu.SuspendLayout();
             this.pnlCentro.SuspendLayout();
+            this.pnlCentro2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.grdData)).BeginInit();
+            this.pnlFiltri.SuspendLayout();
             this.pnlGestione.SuspendLayout();
             this.grpModifica.SuspendLayout();
             this.grpElimina.SuspendLayout();
-            this.pnlCentro2.SuspendLayout();
-            this.pnlFiltri.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.grdData)).BeginInit();
             this.SuspendLayout();
             // 
             // pnlInfoFile
@@ -145,97 +145,6 @@
             this.pnlCentro.Size = new System.Drawing.Size(600, 426);
             this.pnlCentro.TabIndex = 2;
             // 
-            // btnModifica
-            // 
-            this.btnModifica.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnModifica.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnModifica.Location = new System.Drawing.Point(3, 19);
-            this.btnModifica.Name = "btnModifica";
-            this.btnModifica.Size = new System.Drawing.Size(223, 55);
-            this.btnModifica.TabIndex = 0;
-            this.btnModifica.Text = "Modifica";
-            this.btnModifica.UseVisualStyleBackColor = true;
-            // 
-            // txtModifica
-            // 
-            this.txtModifica.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.txtModifica.Location = new System.Drawing.Point(3, 74);
-            this.txtModifica.Name = "txtModifica";
-            this.txtModifica.Size = new System.Drawing.Size(223, 23);
-            this.txtModifica.TabIndex = 1;
-            this.tltScegliID.SetToolTip(this.txtModifica, "Inserisci l\'ID dell\'opera");
-            // 
-            // pnlGestione
-            // 
-            this.pnlGestione.Controls.Add(this.grpModifica);
-            this.pnlGestione.Controls.Add(this.btnAggiungi);
-            this.pnlGestione.Controls.Add(this.grpElimina);
-            this.pnlGestione.Dock = System.Windows.Forms.DockStyle.Top;
-            this.pnlGestione.Location = new System.Drawing.Point(0, 0);
-            this.pnlGestione.Name = "pnlGestione";
-            this.pnlGestione.Size = new System.Drawing.Size(600, 100);
-            this.pnlGestione.TabIndex = 0;
-            // 
-            // grpModifica
-            // 
-            this.grpModifica.Controls.Add(this.btnModifica);
-            this.grpModifica.Controls.Add(this.txtModifica);
-            this.grpModifica.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.grpModifica.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.grpModifica.Location = new System.Drawing.Point(165, 0);
-            this.grpModifica.Name = "grpModifica";
-            this.grpModifica.Size = new System.Drawing.Size(229, 100);
-            this.grpModifica.TabIndex = 1;
-            this.grpModifica.TabStop = false;
-            this.grpModifica.Text = "Modifica opera";
-            // 
-            // btnAggiungi
-            // 
-            this.btnAggiungi.Dock = System.Windows.Forms.DockStyle.Left;
-            this.btnAggiungi.Location = new System.Drawing.Point(0, 0);
-            this.btnAggiungi.Name = "btnAggiungi";
-            this.btnAggiungi.Size = new System.Drawing.Size(165, 100);
-            this.btnAggiungi.TabIndex = 0;
-            this.btnAggiungi.Text = "Aggiungi";
-            this.btnAggiungi.UseVisualStyleBackColor = true;
-            // 
-            // grpElimina
-            // 
-            this.grpElimina.Controls.Add(this.btnElimina);
-            this.grpElimina.Controls.Add(this.txtElimina);
-            this.grpElimina.Dock = System.Windows.Forms.DockStyle.Right;
-            this.grpElimina.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.grpElimina.Location = new System.Drawing.Point(394, 0);
-            this.grpElimina.Name = "grpElimina";
-            this.grpElimina.Size = new System.Drawing.Size(206, 100);
-            this.grpElimina.TabIndex = 2;
-            this.grpElimina.TabStop = false;
-            this.grpElimina.Text = "Rimuovi opera";
-            // 
-            // txtElimina
-            // 
-            this.txtElimina.Dock = System.Windows.Forms.DockStyle.Top;
-            this.txtElimina.Location = new System.Drawing.Point(3, 19);
-            this.txtElimina.Name = "txtElimina";
-            this.txtElimina.Size = new System.Drawing.Size(200, 23);
-            this.txtElimina.TabIndex = 2;
-            this.tltScegliID.SetToolTip(this.txtElimina, "Inserisci l\'ID dell\'opera");
-            // 
-            // tltScegliID
-            // 
-            this.tltScegliID.ToolTipTitle = "Scegli l\'ID dell\'opera";
-            // 
-            // btnElimina
-            // 
-            this.btnElimina.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnElimina.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnElimina.Location = new System.Drawing.Point(3, 42);
-            this.btnElimina.Name = "btnElimina";
-            this.btnElimina.Size = new System.Drawing.Size(200, 55);
-            this.btnElimina.TabIndex = 2;
-            this.btnElimina.Text = "Elimina";
-            this.btnElimina.UseVisualStyleBackColor = true;
-            // 
             // pnlCentro2
             // 
             this.pnlCentro2.Controls.Add(this.grdData);
@@ -246,38 +155,9 @@
             this.pnlCentro2.Size = new System.Drawing.Size(600, 326);
             this.pnlCentro2.TabIndex = 1;
             // 
-            // pnlFiltri
-            // 
-            this.pnlFiltri.Controls.Add(this.btnCerca);
-            this.pnlFiltri.Controls.Add(this.btnVisualizza);
-            this.pnlFiltri.Dock = System.Windows.Forms.DockStyle.Top;
-            this.pnlFiltri.Location = new System.Drawing.Point(0, 0);
-            this.pnlFiltri.Name = "pnlFiltri";
-            this.pnlFiltri.Size = new System.Drawing.Size(600, 70);
-            this.pnlFiltri.TabIndex = 0;
-            // 
-            // btnVisualizza
-            // 
-            this.btnVisualizza.Dock = System.Windows.Forms.DockStyle.Left;
-            this.btnVisualizza.Location = new System.Drawing.Point(0, 0);
-            this.btnVisualizza.Name = "btnVisualizza";
-            this.btnVisualizza.Size = new System.Drawing.Size(293, 70);
-            this.btnVisualizza.TabIndex = 0;
-            this.btnVisualizza.Text = "Visualizza";
-            this.btnVisualizza.UseVisualStyleBackColor = true;
-            // 
-            // btnCerca
-            // 
-            this.btnCerca.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnCerca.Location = new System.Drawing.Point(293, 0);
-            this.btnCerca.Name = "btnCerca";
-            this.btnCerca.Size = new System.Drawing.Size(307, 70);
-            this.btnCerca.TabIndex = 1;
-            this.btnCerca.Text = "Cesca per autore";
-            this.btnCerca.UseVisualStyleBackColor = true;
-            // 
             // grdData
             // 
+            this.grdData.BackgroundColor = System.Drawing.SystemColors.ButtonFace;
             this.grdData.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.grdData.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Column1,
@@ -286,6 +166,7 @@
             this.A,
             this.Column4});
             this.grdData.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.grdData.GridColor = System.Drawing.SystemColors.ButtonFace;
             this.grdData.Location = new System.Drawing.Point(0, 70);
             this.grdData.Name = "grdData";
             this.grdData.Size = new System.Drawing.Size(600, 256);
@@ -321,6 +202,143 @@
             this.Column4.Name = "Column4";
             this.Column4.ReadOnly = true;
             // 
+            // pnlFiltri
+            // 
+            this.pnlFiltri.Controls.Add(this.btnCerca);
+            this.pnlFiltri.Controls.Add(this.btnVisualizza);
+            this.pnlFiltri.Dock = System.Windows.Forms.DockStyle.Top;
+            this.pnlFiltri.Location = new System.Drawing.Point(0, 0);
+            this.pnlFiltri.Name = "pnlFiltri";
+            this.pnlFiltri.Size = new System.Drawing.Size(600, 70);
+            this.pnlFiltri.TabIndex = 0;
+            // 
+            // btnCerca
+            // 
+            this.btnCerca.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnCerca.Location = new System.Drawing.Point(293, 0);
+            this.btnCerca.Name = "btnCerca";
+            this.btnCerca.Size = new System.Drawing.Size(307, 70);
+            this.btnCerca.TabIndex = 1;
+            this.btnCerca.Text = "Cesca per autore";
+            this.btnCerca.UseVisualStyleBackColor = true;
+            // 
+            // btnVisualizza
+            // 
+            this.btnVisualizza.Dock = System.Windows.Forms.DockStyle.Left;
+            this.btnVisualizza.Location = new System.Drawing.Point(0, 0);
+            this.btnVisualizza.Name = "btnVisualizza";
+            this.btnVisualizza.Size = new System.Drawing.Size(293, 70);
+            this.btnVisualizza.TabIndex = 0;
+            this.btnVisualizza.Text = "Visualizza";
+            this.btnVisualizza.UseVisualStyleBackColor = true;
+            this.btnVisualizza.Click += new System.EventHandler(this.btnVisualizza_Click);
+            // 
+            // pnlGestione
+            // 
+            this.pnlGestione.Controls.Add(this.grpModifica);
+            this.pnlGestione.Controls.Add(this.btnAggiungi);
+            this.pnlGestione.Controls.Add(this.grpElimina);
+            this.pnlGestione.Dock = System.Windows.Forms.DockStyle.Top;
+            this.pnlGestione.Location = new System.Drawing.Point(0, 0);
+            this.pnlGestione.Name = "pnlGestione";
+            this.pnlGestione.Size = new System.Drawing.Size(600, 100);
+            this.pnlGestione.TabIndex = 0;
+            // 
+            // grpModifica
+            // 
+            this.grpModifica.Controls.Add(this.btnModifica);
+            this.grpModifica.Controls.Add(this.cmbModifica);
+            this.grpModifica.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.grpModifica.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.grpModifica.Location = new System.Drawing.Point(127, 0);
+            this.grpModifica.Name = "grpModifica";
+            this.grpModifica.Size = new System.Drawing.Size(267, 100);
+            this.grpModifica.TabIndex = 1;
+            this.grpModifica.TabStop = false;
+            this.grpModifica.Text = "Modifica opera";
+            // 
+            // btnModifica
+            // 
+            this.btnModifica.BackColor = System.Drawing.Color.Transparent;
+            this.btnModifica.BackgroundImage = global::Museo.Properties.Resources.vangogo;
+            this.btnModifica.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnModifica.Font = new System.Drawing.Font("Cascadia Code SemiBold", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnModifica.ForeColor = System.Drawing.SystemColors.Control;
+            this.btnModifica.Location = new System.Drawing.Point(3, 19);
+            this.btnModifica.Name = "btnModifica";
+            this.btnModifica.Size = new System.Drawing.Size(261, 54);
+            this.btnModifica.TabIndex = 0;
+            this.btnModifica.Text = "Modifica";
+            this.btnModifica.UseVisualStyleBackColor = false;
+            this.btnModifica.Click += new System.EventHandler(this.btnModifica_Click);
+            // 
+            // cmbModifica
+            // 
+            this.cmbModifica.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.cmbModifica.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbModifica.FormattingEnabled = true;
+            this.cmbModifica.Location = new System.Drawing.Point(3, 73);
+            this.cmbModifica.Name = "cmbModifica";
+            this.cmbModifica.Size = new System.Drawing.Size(261, 24);
+            this.cmbModifica.TabIndex = 1;
+            // 
+            // btnAggiungi
+            // 
+            this.btnAggiungi.BackColor = System.Drawing.Color.Transparent;
+            this.btnAggiungi.BackgroundImage = global::Museo.Properties.Resources.giogioconda;
+            this.btnAggiungi.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnAggiungi.Dock = System.Windows.Forms.DockStyle.Left;
+            this.btnAggiungi.Font = new System.Drawing.Font("Cascadia Code SemiBold", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAggiungi.ForeColor = System.Drawing.SystemColors.Control;
+            this.btnAggiungi.Location = new System.Drawing.Point(0, 0);
+            this.btnAggiungi.Name = "btnAggiungi";
+            this.btnAggiungi.Size = new System.Drawing.Size(127, 100);
+            this.btnAggiungi.TabIndex = 0;
+            this.btnAggiungi.Text = "\r\nAggiungi";
+            this.btnAggiungi.UseVisualStyleBackColor = false;
+            this.btnAggiungi.Click += new System.EventHandler(this.btnAggiungi_Click);
+            // 
+            // grpElimina
+            // 
+            this.grpElimina.Controls.Add(this.btnElimina);
+            this.grpElimina.Controls.Add(this.cmbElimina);
+            this.grpElimina.Dock = System.Windows.Forms.DockStyle.Right;
+            this.grpElimina.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.grpElimina.Location = new System.Drawing.Point(394, 0);
+            this.grpElimina.Name = "grpElimina";
+            this.grpElimina.Size = new System.Drawing.Size(206, 100);
+            this.grpElimina.TabIndex = 2;
+            this.grpElimina.TabStop = false;
+            this.grpElimina.Text = "Rimuovi opera";
+            // 
+            // btnElimina
+            // 
+            this.btnElimina.BackgroundImage = global::Museo.Properties.Resources.mona;
+            this.btnElimina.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnElimina.Font = new System.Drawing.Font("Cascadia Code SemiBold", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnElimina.ForeColor = System.Drawing.SystemColors.Control;
+            this.btnElimina.Location = new System.Drawing.Point(3, 43);
+            this.btnElimina.Name = "btnElimina";
+            this.btnElimina.Size = new System.Drawing.Size(200, 54);
+            this.btnElimina.TabIndex = 2;
+            this.btnElimina.Text = "Elimina";
+            this.btnElimina.UseVisualStyleBackColor = true;
+            this.btnElimina.Click += new System.EventHandler(this.btnElimina_Click);
+            // 
+            // cmbElimina
+            // 
+            this.cmbElimina.Dock = System.Windows.Forms.DockStyle.Top;
+            this.cmbElimina.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbElimina.FormattingEnabled = true;
+            this.cmbElimina.Location = new System.Drawing.Point(3, 19);
+            this.cmbElimina.Name = "cmbElimina";
+            this.cmbElimina.Size = new System.Drawing.Size(200, 24);
+            this.cmbElimina.TabIndex = 2;
+            // 
+            // tltScegliID
+            // 
+            this.tltScegliID.ToolTipTitle = "Scegli l\'ID dell\'opera";
+            // 
             // frmMuseo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -334,20 +352,19 @@
             this.MainMenuStrip = this.menu;
             this.Name = "frmMuseo";
             this.Text = "Museo delle Fontane in Piazza";
+            this.Load += new System.EventHandler(this.frmMuseo_Load);
             this.pnlInfoFile.ResumeLayout(false);
             this.fldInfoFile.ResumeLayout(false);
             this.fldInfoFile.PerformLayout();
             this.menu.ResumeLayout(false);
             this.menu.PerformLayout();
             this.pnlCentro.ResumeLayout(false);
+            this.pnlCentro2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.grdData)).EndInit();
+            this.pnlFiltri.ResumeLayout(false);
             this.pnlGestione.ResumeLayout(false);
             this.grpModifica.ResumeLayout(false);
-            this.grpModifica.PerformLayout();
             this.grpElimina.ResumeLayout(false);
-            this.grpElimina.PerformLayout();
-            this.pnlCentro2.ResumeLayout(false);
-            this.pnlFiltri.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.grdData)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -367,10 +384,8 @@
         private System.Windows.Forms.Button btnAggiungi;
         private System.Windows.Forms.GroupBox grpModifica;
         private System.Windows.Forms.GroupBox grpElimina;
-        private System.Windows.Forms.TextBox txtModifica;
         private System.Windows.Forms.Button btnModifica;
         private System.Windows.Forms.ToolTip tltScegliID;
-        private System.Windows.Forms.TextBox txtElimina;
         private System.Windows.Forms.Button btnElimina;
         private System.Windows.Forms.Panel pnlCentro2;
         private System.Windows.Forms.Panel pnlFiltri;
@@ -382,6 +397,8 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
         private System.Windows.Forms.DataGridViewTextBoxColumn A;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
+        private System.Windows.Forms.ComboBox cmbModifica;
+        private System.Windows.Forms.ComboBox cmbElimina;
     }
 }
 
