@@ -48,7 +48,23 @@ namespace Museo
         {
             Visualizza(new Opera());
         }
+
+        private void btnCerca_Click(object sender, EventArgs e)
+        {
+            frmCerca cerca = new frmCerca();
+            DialogResult res = cerca.ShowDialog();
+            if (res == DialogResult.OK)
+            {
+                Opere.Cerca(cerca.Autore);
+                Visualizza(new Opera());
+            }
+        }
         
+        private void btnInfoFile_Click(object sender, EventArgs e)
+        {
+            lblInfo.Text = "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa";
+        }
+
         private void esciToolStripMenuItem_Click(object sender, EventArgs e)
         {
             DialogResult res =

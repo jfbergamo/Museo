@@ -22,9 +22,17 @@ namespace Museo
         private void btnConferma_Click(object sender, EventArgs e)
         {
             nome = txtNome.Text;
-            Close();
+            if (string.IsNullOrEmpty(nome))
+            {
+                MessageBox.Show("Inserisci un nome.", "ATTENZIONE", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            else
+            {
+                DialogResult = DialogResult.OK;
+                Close();
+            }
         }
 
-        public string Nome { get => nome; }
+        public string Autore { get => nome; }
     }
 }

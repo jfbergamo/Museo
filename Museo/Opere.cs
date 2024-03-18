@@ -26,6 +26,11 @@ namespace Museo
             throw new NotImplementedException();
         }
 
+        public static void Cerca(string autore)
+        {
+            throw new NotImplementedException();
+        }
+
         public static int ID { get => id; }
     }
 }

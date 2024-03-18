@@ -96,9 +96,8 @@
             this.lblInfo.ForeColor = System.Drawing.SystemColors.Control;
             this.lblInfo.Location = new System.Drawing.Point(0, 0);
             this.lblInfo.Name = "lblInfo";
-            this.lblInfo.Size = new System.Drawing.Size(277, 13);
+            this.lblInfo.Size = new System.Drawing.Size(0, 13);
             this.lblInfo.TabIndex = 1;
-            this.lblInfo.Text = "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa";
             // 
             // btnInfoFile
             // 
@@ -109,6 +108,7 @@
             this.btnInfoFile.TabIndex = 0;
             this.btnInfoFile.Text = "Mostra info File";
             this.btnInfoFile.UseVisualStyleBackColor = true;
+            this.btnInfoFile.Click += new System.EventHandler(this.btnInfoFile_Click);
             // 
             // menu
             // 
@@ -221,6 +221,7 @@
             this.btnCerca.TabIndex = 1;
             this.btnCerca.Text = "Cesca per autore";
             this.btnCerca.UseVisualStyleBackColor = true;
+            this.btnCerca.Click += new System.EventHandler(this.btnCerca_Click);
             // 
             // btnVisualizza
             // 
