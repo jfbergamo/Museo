@@ -31,9 +31,9 @@ namespace Museo
         public Opera()
         {
             id = -1; // Valore invalido
-            autore = "cescokevin"; // Valore a caso
-            titolo = "colpa di cesco";
-            anno = 0; // praticamente gesù
+            autore = "autore";
+            titolo = "titolo";
+            anno = 0;
             tipologia = TipologiaOpera.ARAZZO; // perché sì
         }
 
@@ -55,13 +55,23 @@ namespace Museo
             return ID.ToString() + "|" + Autore + "|" + Titolo + "|" + Anno.ToString() + "|" + Tipologia.ToString(); // TODO: implementarlo con proprietà
         }
 
+        private string accorciaStringa(string str)
+        {
+            int len = 50;
+            if (str.Length > len)
+            {
+                str = str.Substring(0, len - 1);
+            }
+            return str;
+        }
+
         #endregion
 
         #region PROPRIETA'
 
         public int ID { get => id; set => id = Math.Abs(value); }
-        public string Autore { get => autore; set => autore = value; }
-        public string Titolo { get => titolo; set => titolo = value; }
+        public string Autore { get => autore; set => autore = accorciaStringa(value); }
+        public string Titolo { get => titolo; set => titolo = accorciaStringa(value); }
         public int Anno { get => anno; set => anno = value; }
         public TipologiaOpera Tipologia { get => tipologia; set => tipologia = value; }
 

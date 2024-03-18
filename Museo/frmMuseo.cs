@@ -21,6 +21,7 @@ namespace Museo
 
         public frmMuseo()
         {
+            Opere.Init();
             InitializeComponent();
         }
 
@@ -62,7 +63,7 @@ namespace Museo
         
         private void btnInfoFile_Click(object sender, EventArgs e)
         {
-            lblInfo.Text = "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa";
+            lblInfo.Text = Opere.AttributiFile();
         }
 
         private void esciToolStripMenuItem_Click(object sender, EventArgs e)
